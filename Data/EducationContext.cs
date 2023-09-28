@@ -14,6 +14,10 @@ namespace Education.Data
         {
         }
 
+       
+
+       
+
         public DbSet<Education.Models.Thr3ad> Thr3ad { get; set; } = default!;
     }
 }

@@ -28,7 +28,7 @@ namespace Education.Controllers
             }
 
             var threads = from m in _context.Thr3ad
-                         select m;
+                          select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -69,7 +69,7 @@ namespace Education.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Author,Content")] Thr3ad thr3ad)
         {
-            
+
             if (ModelState.IsValid)
             {
                 _context.Add(thr3ad);
@@ -162,14 +162,14 @@ namespace Education.Controllers
             {
                 _context.Thr3ad.Remove(thr3ad);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool Thr3adExists(int id)
         {
-          return (_context.Thr3ad?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Thr3ad?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
